@@ -19,11 +19,11 @@ else:
 
     # Create directories if they don't exist
     DIRS = ['Audio', 'Video', 'Images', 'Documents', 'Folders', 'Other', 'Compressed', 'Executable']
-    if not os.path.isdir('./Audio'):
-        for d in DIRS:
+    for d in DIRS:
+        if not os.path.isdir('./{}'.format(d)):
             os.mkdir('./{}'.format(d))
-
-        print('Directories created successfuly.')
+            
+    print('Directories created successfuly.')
 
     # Run main script
     for f in files:
