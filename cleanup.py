@@ -29,7 +29,10 @@ else:
     for f in files:
         name, extension = os.path.splitext(f)
         
-        if extension in EXT_EXECUTABLE:
+        if os.path.isdir(f):
+            if f not in DIRS:
+                shutil.move(f, './Folders/{}'.format(f))
+        elif extension in EXT_EXECUTABLE:
             shutil.move(f, './Executable/{}'.format(f))
         elif extension in EXT_DOCUMENTS:
             shutil.move(f, './Documents/{}'.format(f))
@@ -42,12 +45,8 @@ else:
         elif extension in EXT_COMPRESSED:
             shutil.move(f, './Compressed/{}'.format(f))
         else:
-            if os.path.isdir(name):
-                if name not in DIRS:
-                    shutil.move(f, './Folders/{}'.format(f))
-            else:
-                if f != os.path.basename(__file__):
-                    shutil.move(f, './Other/{}'.format(f))
+            if f != os.path.basename(__file__):
+                shutil.move(f, './Other/{}'.format(f))
 
     print('CLEANUP COMPLETED\n')
 
