@@ -22,7 +22,7 @@ else:
     for d in DIRS:
         if not os.path.isdir('./{}'.format(d)):
             os.mkdir('./{}'.format(d))
-            
+
     print('Directories created successfuly.')
 
     # Run main script
@@ -47,6 +47,11 @@ else:
         else:
             if f != os.path.basename(__file__):
                 shutil.move(f, './Other/{}'.format(f))
+
+    # Remove empty dirs that were created by the script
+    for d in DIRS:
+        if not os.listdir('./{}'.format(d)):
+            os.rmdir('./{}'.format(d))
 
     print('CLEANUP COMPLETED\n')
 
