@@ -1,11 +1,11 @@
 import os
 import shutil
 
-EXT_AUDIO = ['.wav', '.mp3', '.raw', '.wma']
-EXT_VIDEO = ['.mp4', '.m4a', '.m4v', '.f4v', '.f4a', '.m4b', '.m4r', '.f4b', '.mov', '.avi', '.wmv', '.flv']
+EXT_AUDIO = ['.wav', '.mp3', '.raw', '.wma','.flac']
+EXT_VIDEO = ['.mp4', '.m4a', '.m4v', '.f4v', '.f4a', '.m4b', '.m4r', '.f4b', '.mov', '.avi', '.wmv', '.flv','.mkv']
 EXT_IMAGES = ['.jpeg', '.jpg', '.png', '.svg', '.gif', '.bmp']
 EXT_DOCUMENTS = ['.txt', '.pdf', '.doc', '.docx', '.odt', '.html', '.csv']
-EXT_COMPRESSED = ['.zip']
+EXT_COMPRESSED = ['.zip','.rar']
 EXT_EXECUTABLE = ['.exe']
 
 print('DOWNLOADS FOLDER CLEANUP\n')
